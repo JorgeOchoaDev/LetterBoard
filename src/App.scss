@@ -1,9 +1,87 @@
 $base-color: #36393F;
-$logo-color: #FAA626;
+$primary-color: #faa626;
 $darker-color: #202225;
 $highlight-color: #2F3136;
 $text-color: #8E8E8B;
 
 body{
     background-color: $base-color
+}
+
+.btn-outline-primary{
+    color: $primary-color;
+    border-color: $primary-color;
+}
+
+.btn-outline-primary:active{
+    background-color: $primary-color !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 .2rem 
+    $primary-color !important;
+}
+
+.btn-outline-primary:focus{
+    box-shadow: 0 0 0 .2rem 
+    $primary-color;
+}
+
+.btn-outline-primary:hover{
+    color: #ffffff;
+    border-color: #ffffff;
+    background-color: $primary-color;
+}
+
+.card{
+    width: 18rem;
+}
+
+.close{
+    color: #ffffff;
+    text-shadow: none;
+}
+
+.close:hover{
+    color: $primary-color;
+}
+
+.fa-film{
+    color: $primary-color;
+}
+
+.field-label{
+    color: $primary-color;
+}
+
+.form-control{
+    background-color: $highlight-color !important;
+    color: $text-color !important;
+    border: 0;
+}
+
+.form-control-sm{
+    background-color: $highlight-color !important;
+    color: $text-color !important;
+    border: 0;
+}
+
+.modal-footer{
+    border-color: $primary-color;
+}
+
+.modal-content{
+    background-color: $darker-color;
+    color: $primary-color;
+}
+
+.modal-header{
+    border-color: $primary-color;
+}
+
+.navbar-dark{
+    background-color: $darker-color !important;
+}
+
+.navbar-toggler{
+    border: 0;
+    color: $primary-color !important;
 }

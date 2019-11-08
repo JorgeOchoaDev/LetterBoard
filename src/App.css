@@ -1,4 +1,82 @@
 body {
   background-color: #36393F;
 }
+
+.btn-outline-primary {
+  color: #faa626;
+  border-color: #faa626;
+}
+
+.btn-outline-primary:active {
+  background-color: #faa626 !important;
+  border-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0 0.2rem #faa626 !important;
+          box-shadow: 0 0 0 0.2rem #faa626 !important;
+}
+
+.btn-outline-primary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem #faa626;
+          box-shadow: 0 0 0 0.2rem #faa626;
+}
+
+.btn-outline-primary:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #faa626;
+}
+
+.card {
+  width: 18rem;
+}
+
+.close {
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.close:hover {
+  color: #faa626;
+}
+
+.fa-film {
+  color: #faa626;
+}
+
+.field-label {
+  color: #faa626;
+}
+
+.form-control {
+  background-color: #2F3136 !important;
+  color: #8E8E8B !important;
+  border: 0;
+}
+
+.form-control-sm {
+  background-color: #2F3136 !important;
+  color: #8E8E8B !important;
+  border: 0;
+}
+
+.modal-footer {
+  border-color: #faa626;
+}
+
+.modal-content {
+  background-color: #202225;
+  color: #faa626;
+}
+
+.modal-header {
+  border-color: #faa626;
+}
+
+.navbar-dark {
+  background-color: #202225 !important;
+}
+
+.navbar-toggler {
+  border: 0;
+  color: #faa626 !important;
+}
 /*# sourceMappingURL=App.css.map */
