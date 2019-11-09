@@ -14,7 +14,7 @@ export default function DataEntryModal(){
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="https://letterboard-api.herokuapp.com/" method="POST">
+                        <form action="https://letterboard-api.herokuapp.com:3000/" method="POST">
                             <ModalInput
                             type="text"
                             label="ID"
