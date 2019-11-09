@@ -4,10 +4,9 @@ import MovieCard from './MovieCard'
 
 class CardContainer extends Component{
     render(){
-        console.log(this.props)
         return(
-            <div class="container my-5 d-flex justify-content-between">
-                <div class="row">
+            <div class="container my-5 mx-auto">
+                <div class="row d-flex justify-content-between">
                     {
                         this.props.movies.map((movie) => {
                             return <MovieCard

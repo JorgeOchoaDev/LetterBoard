@@ -16,7 +16,12 @@ export default function DataEntryModal(){
                     <div class="modal-body">
                         <ModalForm/>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer">                       
+                        <form action="?" method="POST">
+                            <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G"></div>
+                            <br/>
+                            <input type="submit" value="Submit"/>
+                        </form>
                         <button type="button" class="btn btn-outline-primary"><i class="fas fa-save"></i></button>
                     </div>
                 </div>
