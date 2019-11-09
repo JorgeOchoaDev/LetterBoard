@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ModalForm from './ModalForm'
+import ModalInput from './ModalInput'
 
 export default function DataEntryModal(){
     return(
@@ -14,15 +14,35 @@ export default function DataEntryModal(){
                         </button>
                     </div>
                     <div class="modal-body">
-                        <ModalForm/>
-                    </div>
-                    <div class="modal-footer">                       
-                        <form action="?" method="POST">
-                            <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G"></div>
+                        <form action="https://letterboard-api.herokuapp.com/" method="POST">
+                            <ModalInput
+                            type="text"
+                            label="ID"
+                            />
+                            <ModalInput
+                            type="text"
+                            label="Title"
+                            />
+                            <ModalInput
+                            type="text"
+                            label="Director"
+                            />
+                            <ModalInput
+                            type="text"
+                            label="Duration"
+                            />
+                            <ModalInput
+                            type="date"
+                            label="Release"
+                            />
+                            <ModalInput
+                            type="date"
+                            label="Exit"
+                            />
+                            <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G"/>
                             <br/>
-                            <input type="submit" value="Submit"/>
+                            <input type="submit" class="btn btn-outline-primary" value="Submit"/>
                         </form>
-                        <button type="button" class="btn btn-outline-primary"><i class="fas fa-save"></i></button>
                     </div>
                 </div>
             </div>
