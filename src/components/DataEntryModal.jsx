@@ -1,8 +1,15 @@
-import React from 'react'
+import React,{Component} from 'react'
 
 import ModalInput from './ModalInput'
 
-export default function DataEntryModal(){
+class DataEntryModal extends Component{
+    state={
+        hide: true
+    }
+    recaptchaHandler (datacallback){
+        this.setState.hide(false)
+    }
+    render(){
     return(
         <div class="modal fade" id="dataEntryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -14,7 +21,7 @@ export default function DataEntryModal(){
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="https://letterboard-api.herokuapp.com:3000/" method="POST">
+                        <form action="https://letterboard-api.herokuapp.com/" method="POST">
                             <ModalInput
                             type="text"
                             label="ID"
@@ -39,13 +46,16 @@ export default function DataEntryModal(){
                             type="date"
                             label="Exit"
                             />
-                            <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G"/>
-                            <br/>
-                            <input type="submit" class="btn btn-outline-primary" value="Submit"/>
+                            <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G" data-callback={this.recaptchaHandler}/>
+                            <input type="submit" class="btn btn-outline-primary" hidden={this.state.hide}  value="Submit"/>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     )    
+    }
 }
+
+
+export default DataEntryModal

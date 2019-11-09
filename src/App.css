@@ -58,6 +58,10 @@ body {
   border: 0;
 }
 
+.g-recaptcha {
+  margin-bottom: 1rem;
+}
+
 .modal-footer {
   border-color: #faa626;
 }
