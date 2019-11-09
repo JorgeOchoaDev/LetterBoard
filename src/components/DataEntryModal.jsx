@@ -7,6 +7,7 @@ class DataEntryModal extends Component{
         hide: true
     }
     recaptchaHandler = ()=>{
+        console.log('recaptchaHandler called')
         this.setState({hide:false})
     }
     render(){
