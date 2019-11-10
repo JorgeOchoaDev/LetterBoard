@@ -9,6 +9,7 @@ import DataEntryModal from './components/DataEntryModal'
 class App extends Component {
   state={
     logged: false,
+    input:"",
     moviesCollection:[
       {
         id:"01",
@@ -19,6 +20,9 @@ class App extends Component {
         source:"https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg"
       }
     ]
+  }
+  inputChangeHandler = (event)=>{
+    
   }
   render(){
     return (

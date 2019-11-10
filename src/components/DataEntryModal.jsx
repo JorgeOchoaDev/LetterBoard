@@ -9,23 +9,39 @@ class DataEntryModal extends Component{
         title: "",
         director: "",
         duration: "",
-        relese: "",
+        release: "",
         exit: "",
         source: ""
     }
-    formHandler = ()=>{
-
+    formHandler = (event)=>{
+        event.preventDefault()
+        const movie = {
+            id:this.state.id,
+            title:this.state.title,
+            director:this.state.director,
+            duration:this.state.duration,
+            release:this.state.release,
+            exit:this.state.exit,
+            source:this.state.source
+        }
+        console.log(JSON.stringify(movie))
+        fetch('https://letterboard-api.herokuapp.com/',{
+            headers:{
+                "Content-Type":"application/json",
+            },
+            method: "POST",
+            body: JSON.stringify(movie)
+        }).then((res)=>res.json()
+            ).catch((err)=>console.log(err.message))
     }
     onChangeHandler = (event)=>{
-        console.log('changing')
-        this.setState({[event.target.label]: event.target.value})
+        this.setState({[event.target.id]: event.target.value})
     }
     recaptchaHandler = ()=>{
         console.log('recaptchaHandler called')
         this.setState({hide:false})
     }
     render(){
-        console.log(this.state)
     return(
         <div class="modal fade" id="dataEntryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -74,7 +90,7 @@ class DataEntryModal extends Component{
                             onChange={this.onChangeHandler}
                             />
                             <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G" data-callback={this.recaptchaHandler}/>
-                            <input type="submit" class="btn btn-outline-primary" onclick={this.formHandler} hidden={this.state.hide}  value="Submit"/>
+                            <button class="btn btn-outline-primary" onClick={this.formHandler} hidden={this.state.hide}  value="Submit">Submit</button>
                         </form>
                     </div>
                 </div>
