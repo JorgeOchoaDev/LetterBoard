@@ -4,13 +4,28 @@ import ModalInput from './ModalInput'
 
 class DataEntryModal extends Component{
     state={
-        hide: false
+        hide: false,
+        id: "",
+        title: "",
+        director: "",
+        duration: "",
+        relese: "",
+        exit: "",
+        source: ""
+    }
+    formHandler = ()=>{
+
+    }
+    onChangeHandler = (event)=>{
+        console.log('changing')
+        this.setState({[event.target.label]: event.target.value})
     }
     recaptchaHandler = ()=>{
         console.log('recaptchaHandler called')
         this.setState({hide:false})
     }
     render(){
+        console.log(this.state)
     return(
         <div class="modal fade" id="dataEntryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -22,37 +37,44 @@ class DataEntryModal extends Component{
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="https://letterboard-api.herokuapp.com/" method="POST">
+                        <form>
                             <ModalInput
                             type="text"
                             label="id"
+                            onChange={this.onChangeHandler}
                             />
                             <ModalInput
                             type="text"
                             label="title"
+                            onChange={this.onChangeHandler}
                             />
                             <ModalInput
                             type="text"
                             label="director"
+                            onChange={this.onChangeHandler}
                             />
                             <ModalInput
                             type="text"
                             label="duration"
+                            onChange={this.onChangeHandler}
                             />
                             <ModalInput
                             type="text"
-                            label="ImgLink"
-                            />
-                            <ModalInput
-                            type="text"
-                            label="Release"
+                            label="release"
+                            onChange={this.onChangeHandler}
                             />
                             <ModalInput
                             type="text"
                             label="exit"
+                            onChange={this.onChangeHandler}
+                            />
+                            <ModalInput
+                            type="text"
+                            label="source"
+                            onChange={this.onChangeHandler}
                             />
                             <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G" data-callback={this.recaptchaHandler}/>
-                            <input type="submit" class="btn btn-outline-primary" hidden={this.state.hide}  value="Submit"/>
+                            <input type="submit" class="btn btn-outline-primary" onclick={this.formHandler} hidden={this.state.hide}  value="Submit"/>
                         </form>
                     </div>
                 </div>
