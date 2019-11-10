@@ -22,6 +22,10 @@ export default function ModalForm(){
             label="Duration"
             />
             <ModalInput
+            type="text"
+            label="Img Link"
+            />
+            <ModalInput
             type="date"
             label="Release"
             />

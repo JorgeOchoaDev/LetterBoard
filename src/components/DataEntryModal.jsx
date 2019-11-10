@@ -25,19 +25,23 @@ class DataEntryModal extends Component{
                         <form action="https://letterboard-api.herokuapp.com/" method="POST">
                             <ModalInput
                             type="text"
-                            label="ID"
+                            label="id"
                             />
                             <ModalInput
                             type="text"
-                            label="Title"
+                            label="title"
                             />
                             <ModalInput
                             type="text"
-                            label="Director"
+                            label="director"
                             />
                             <ModalInput
                             type="text"
-                            label="Duration"
+                            label="duration"
+                            />
+                            <ModalInput
+                            type="text"
+                            label="ImgLink"
                             />
                             <ModalInput
                             type="date"
@@ -45,7 +49,7 @@ class DataEntryModal extends Component{
                             />
                             <ModalInput
                             type="date"
-                            label="Exit"
+                            label="exit"
                             />
                             <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G" data-callback={this.recaptchaHandler}/>
                             <input type="submit" class="btn btn-outline-primary" hidden={this.state.hide}  value="Submit"/>

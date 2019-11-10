@@ -1,7 +1,5 @@
 import React from 'react'
 
-import DataEntryModal from './DataEntryModal'
-
 export default function MovieEntryButton(){
     return(
         <div>

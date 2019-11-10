@@ -11,14 +11,12 @@ class App extends Component {
     logged: false,
     moviesCollection:[
       {
-        name:"Movie 1",
-        description:"Some description 1"
-      },{
-        name:"Movie2",
-        description:"Some description 2"
-      },{
-        name:"Movie2",
-        description:"Some description 2"
+        id:"01",
+        title:"Movie 1",
+        director:"someone",
+        release:"some date",
+        exit: "some other date",
+        source:"https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg"
       }
     ]
   }

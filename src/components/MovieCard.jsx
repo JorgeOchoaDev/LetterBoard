@@ -7,7 +7,7 @@ export default function MovieCard(props){
         <div class="col-md-6 col-lg-4">
             <div class="card text-white bg-secondary my-3">
                 <img
-                    src="https://m.media-amazon.com/images/M/MV5BNGQwZjg5YmYtY2VkNC00NzliLTljYTctNzI5NmU3MjE2ODQzXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg"
+                    src={props.source}
                     class="card-img-top"
                     alt="..."/>
                 <div class="card-body">
@@ -16,7 +16,7 @@ export default function MovieCard(props){
                             ID
                         </div>
                         <div class="col-8">
-                            {props.description}
+                            {props.id}
                         </div>
                     </div>
                     <div class="row">
@@ -24,7 +24,7 @@ export default function MovieCard(props){
                             Title
                         </div>
                         <div class="col-8">
-                            {props.description}
+                            {props.title}
                         </div>
                     </div>
                     <div class="row">
@@ -32,7 +32,7 @@ export default function MovieCard(props){
                             Director
                         </div>
                         <div class="col-8">
-                            {props.description}
+                            {props.director}
                         </div>
                     </div>
                     <div class="row">
@@ -40,7 +40,7 @@ export default function MovieCard(props){
                             Release
                         </div>
                         <div class="col-8">
-                            {props.description}
+                            {props.release}
                         </div>
                     </div>
                     <div class="row">
@@ -48,7 +48,7 @@ export default function MovieCard(props){
                             Exit
                         </div>
                         <div class="col-8">
-                            {props.description}
+                            {props.exit}
                         </div>
                     </div>
                 </div>

@@ -10,8 +10,12 @@ class CardContainer extends Component{
                     {
                         this.props.movies.map((movie) => {
                             return <MovieCard
-                                name={movie.name}
-                                description={movie.description}
+                                source={movie.source}
+                                id={movie.id}
+                                title={movie.title}
+                                director={movie.director}
+                                release={movie.release}
+                                exit={movie.exit}
                             />
                         })
                     }
