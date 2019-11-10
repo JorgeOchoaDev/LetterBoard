@@ -4,7 +4,7 @@ import ModalInput from './ModalInput'
 
 class DataEntryModal extends Component{
     state={
-        hide: true
+        hide: false
     }
     recaptchaHandler = ()=>{
         console.log('recaptchaHandler called')
@@ -44,11 +44,11 @@ class DataEntryModal extends Component{
                             label="ImgLink"
                             />
                             <ModalInput
-                            type="date"
+                            type="text"
                             label="Release"
                             />
                             <ModalInput
-                            type="date"
+                            type="text"
                             label="exit"
                             />
                             <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G" data-callback={this.recaptchaHandler}/>
