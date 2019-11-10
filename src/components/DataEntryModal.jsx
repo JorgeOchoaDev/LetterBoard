@@ -31,7 +31,10 @@ class DataEntryModal extends Component{
             },
             method: "POST",
             body: JSON.stringify(movie)
-        }).then((res)=>res.json()
+        }).then((res)=>{
+            res.json()
+            window.location.reload(true)
+        }
             ).catch((err)=>console.log(err.message))
     }
     onChangeHandler = (event)=>{
@@ -89,7 +92,7 @@ class DataEntryModal extends Component{
                             label="source"
                             onChange={this.onChangeHandler}
                             />
-                            <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G" data-callback={this.recaptchaHandler}/>
+                            <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G"/>
                             <button class="btn btn-outline-primary" onClick={this.formHandler} hidden={this.state.hide}  value="Submit">Submit</button>
                         </form>
                     </div>
