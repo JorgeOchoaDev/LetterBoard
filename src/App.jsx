@@ -12,11 +12,11 @@ class App extends Component {
     username: "",
     password: "",
     hiddenLogin: false,
-    hiddenEntryButton: false,
+    hiddenEntryButton: true,
     moviesCollection:[]
   }
   componentDidMount(){
-    fetch('https://letterboard-api.herokuapp.com/getmovies',{
+    fetch('http://localhost:3030/getmovies',{
       headers:{
         "Content-Type":"application/json",
       },
@@ -25,6 +25,14 @@ class App extends Component {
       .then((data)=>{
           this.setState({moviesCollection:[...this.state.moviesCollection,data]})        
       })
+  }
+  componentDidUpdate(prevProps, prevState){
+    if (prevState.logged === false && this.state.logged === true){
+      this.setState({
+        hiddenLogin : true,
+        hiddenEntryButton: false
+      })
+    }
   }
   usernameHandler = (event) =>{
     this.setState({
@@ -36,24 +44,24 @@ class App extends Component {
       password: event.target.value
     })
   }
-  loginHandler = (event)=>{
+  loginHandler = async (event)=>{
     console.log("running login")
     event.preventDefault()
-    fetch('https://letterboard-api.herokuapp.com/login',{
+    const credentials = {
+      username : this.state.username,
+      password : this.state.password
+    }
+    console.log(credentials)
+    const response = await fetch('http://localhost:3030/login',{
       headers:{
-        "Content-Type":"application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*"
+        "Content-Type":"application/json"
       },
       method: "POST",
-    }).then((res)=>{
-      res.json()
-    }).then((data)=>{
-      this.setState({logged: data})
+      body: JSON.stringify(credentials)
     })
-    .catch((err)=>{
-          console.log(err)
-      })
+    const isValid = await response.json()
+    const loggedState =await isValid.login
+    this.setState({logged: loggedState})
   }
   render(){
     let flattener= this.state.moviesCollection.flat()
