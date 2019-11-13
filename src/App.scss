@@ -20,6 +20,10 @@ body{
     $primary-color !important;
 }
 
+.btn-outline-primary:disabled{
+    color: $text-color !important;
+}
+
 .btn-outline-primary:focus{
     box-shadow: 0 0 0 .2rem 
     $primary-color;

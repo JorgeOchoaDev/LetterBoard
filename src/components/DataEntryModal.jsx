@@ -4,7 +4,9 @@ import ModalInput from './ModalInput'
 
 class DataEntryModal extends Component{
     state={
-        hide: false,
+        disabled: false,
+        button: "Sumbit",
+        hiddenAlert: true,
         id: "",
         title: "",
         director: "",
@@ -24,18 +26,20 @@ class DataEntryModal extends Component{
             exit:this.state.exit,
             source:this.state.source
         }
-        console.log(JSON.stringify(movie))
         fetch('https://letterboard-api.herokuapp.com/',{
             headers:{
                 "Content-Type":"application/json",
+                "Access-Control-Allow-Origin": "*"
             },
             method: "POST",
             body: JSON.stringify(movie)
         }).then((res)=>{
             res.json()
             window.location.reload(true)
-        }
-            ).catch((err)=>console.log(err.message))
+        }).catch((err)=>{
+                console.log(err)
+                this.setState({disabled: true,button:"Wait!",hiddenAlert: false})
+            })
     }
     onChangeHandler = (event)=>{
         this.setState({[event.target.id]: event.target.value})
@@ -56,6 +60,12 @@ class DataEntryModal extends Component{
                         </button>
                     </div>
                     <div class="modal-body">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert" hidden={this.state.hiddenAlert}>
+                            <strong>You must wait 5 minutes in between submissions!</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
                         <form>
                             <ModalInput
                             type="text"
@@ -93,7 +103,11 @@ class DataEntryModal extends Component{
                             onChange={this.onChangeHandler}
                             />
                             <div class="g-recaptcha" data-sitekey="6LdH2sEUAAAAAGL9Luae10rCweXBhXrNPjvj0y0G"/>
-                            <button class="btn btn-outline-primary" onClick={this.formHandler} hidden={this.state.hide}  value="Submit">Submit</button>
+                            <button
+                                class="btn btn-outline-primary"
+                                onClick={this.formHandler}
+                                disabled={this.state.disabled} 
+                            >{this.state.button}</button>
                         </form>
                     </div>
                 </div>

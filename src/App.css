@@ -14,6 +14,10 @@ body {
           box-shadow: 0 0 0 0.2rem #faa626 !important;
 }
 
+.btn-outline-primary:disabled {
+  color: #8E8E8B !important;
+}
+
 .btn-outline-primary:focus {
   -webkit-box-shadow: 0 0 0 0.2rem #faa626;
           box-shadow: 0 0 0 0.2rem #faa626;
