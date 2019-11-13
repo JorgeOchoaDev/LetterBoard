@@ -35,7 +35,7 @@ class DataEntryModal extends Component{
             body: JSON.stringify(movie)
         }).then((res)=>{
             res.json()
-            window.location.reload(true)
+            //window.location.reload(true)
         }).catch((err)=>{
                 console.log(err)
                 this.setState({disabled: true,button:"Wait!",hiddenAlert: false})
