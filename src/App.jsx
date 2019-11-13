@@ -16,7 +16,7 @@ class App extends Component {
     moviesCollection:[]
   }
   componentDidMount(){
-    fetch('http://localhost:3030/getmovies',{
+    fetch('https://letterboard-api.herokuapp.com/getmovies',{
       headers:{
         "Content-Type":"application/json",
       },
@@ -52,7 +52,7 @@ class App extends Component {
       password : this.state.password
     }
     console.log(credentials)
-    const response = await fetch('http://localhost:3030/login',{
+    const response = await fetch('https://letterboard-api.herokuapp.com/login',{
       headers:{
         "Content-Type":"application/json"
       },
